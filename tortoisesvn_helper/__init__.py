@@ -22,7 +22,6 @@ else:
 
 
 class SVNCommit(DirectoryPaneCommand):
-	"""docstring for SVNCommit"""
 	aliases = ('Svn: Commit', 'SVN: COMMIT')
 	def __call__(self):
 		url = self.pane.get_path()
@@ -36,9 +35,47 @@ class SVNCommit(DirectoryPaneCommand):
 
 		openCommand(" /command:commit /path:", paths, path)	
 
+class SVNLog(DirectoryPaneCommand):
+	aliases = ('Svn: Log', 'SVN: LOG')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
 
+		paths=[]
+		paths.append(as_url(path))	
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
 
+		openCommand(" /command:log /path:", paths, path)
 
+class SVNUpdate(DirectoryPaneCommand):
+	aliases = ('Svn: Update', 'SVN: UPDATE')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))	
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:update /path:", paths, path)
+
+class SVNRepoBrowser(DirectoryPaneCommand):
+	aliases = ('Svn: Open Repo Browser', 'SVN: OPEN REPO BROWSER')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))	
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:repobrowser /path:", paths, path)
 
 class TortoiseSVNProcSetPath(DirectoryPaneCommand):
 	def __call__(self):

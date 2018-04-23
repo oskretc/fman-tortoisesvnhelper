@@ -8,8 +8,12 @@
 * Invoke command window with Ctrl+Shift+P/Cmd+Shift+P and type SVN
 
 # Features
-* Command: **SVN: Commit**:
-
+Only the following commands are implemented (more to come)
+* Commands:
+  * SVNCommit
+  * SVNLog
+  * SVNUpdate
+  * SVNRepoBrowser
 
 # TODO
 
