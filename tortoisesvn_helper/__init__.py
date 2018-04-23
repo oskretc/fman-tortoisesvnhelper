@@ -77,6 +77,20 @@ class SVNRepoBrowser(DirectoryPaneCommand):
 
 		openCommand(" /command:repobrowser /path:", paths, path)
 
+class SVNRepoStatus(DirectoryPaneCommand):
+	aliases = ('Svn: Status', 'SVN: STATUS')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))	
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:repostatus /path:", paths, path)		
+
 class TortoiseSVNProcSetPath(DirectoryPaneCommand):
 	def __call__(self):
 		if set_tortoisesvnproc_install_path():
