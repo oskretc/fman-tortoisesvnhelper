@@ -78,7 +78,7 @@ class SVNRepoBrowser(DirectoryPaneCommand):
 		openCommand(" /command:repobrowser /path:", paths, path)
 
 class SVNRepoStatus(DirectoryPaneCommand):
-	aliases = ('Svn: Status', 'SVN: STATUS')
+	aliases = ('Svn: Repo Status', 'SVN: REPO STATUS')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
