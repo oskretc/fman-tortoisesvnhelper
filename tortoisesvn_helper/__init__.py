@@ -23,6 +23,7 @@ else:
 
 class SVNCommit(DirectoryPaneCommand):
 	"""docstring for SVNCommit"""
+	aliases = ('Svn: Commit', 'SVN: COMMIT')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
@@ -95,10 +96,6 @@ def openCommand(option, files, path):
 	# TODO: Check if quoting is working for other platforms
 	args = [shlex.quote(to_path(x)) for x in files]
 	cmd= _TORTOISEPROCPATH  + " " + option + " ".join(args)
-
-	f= open('c:\\tmp\\svn.txt', 'a')
-	f.write('\nCommand:' + cmd)
-	f.close()	
 	
 	env = create_clean_environment()
 	Popen(cmd, shell=False, cwd=path,
