@@ -19,7 +19,19 @@ if settings['path'] and exists(as_url(settings['path'])):
 else:
 	_TORTOISEPROCPATH = _TORTOISEPROCPATHDEFAULT
 
+class SVNSwtich(DirectoryPaneCommand):
+	aliases = ('Svn: Switch', 'SVN: SWITCH')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
 
+		paths=[]
+		paths.append(as_url(path))	
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:switch /path:", paths, path)	
 
 class SVNCommit(DirectoryPaneCommand):
 	aliases = ('Svn: Commit', 'SVN: COMMIT')

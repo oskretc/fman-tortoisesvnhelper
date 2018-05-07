@@ -14,6 +14,7 @@ Only the following commands are implemented (more to come)
   * SVNLog
   * SVNUpdate
   * SVNRepoBrowser
+  * SVNSwitch
 
 # TODO
 
