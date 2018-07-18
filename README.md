@@ -1,3 +1,7 @@
+If you like the plugin, consider ...
+
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+
 # TortoiseSVN Helper (Windows only) 
 [fman](https://fman.io) plugin to work with TortoiseSVN
 
@@ -19,3 +23,6 @@ Only the following commands are implemented (more to come)
 # TODO
 
 * TODO: Check if quoting is working for other platforms
+
+[buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
+[buymeacoffee]: https://www.buymeacoffee.com/4DGUZ2NoO
