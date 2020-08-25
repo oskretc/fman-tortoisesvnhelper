@@ -26,12 +26,12 @@ class SVNSwtich(DirectoryPaneCommand):
 		scheme, path = splitscheme(url)
 
 		paths=[]
-		paths.append(as_url(path))	
+		paths.append(as_url(path))
 		if scheme != 'file://':
 			show_alert('{} is not supported'.format(url))
 			return
 
-		openCommand(" /command:switch /path:", paths, path)	
+		openCommand(" /command:switch /path:", paths, path)
 
 class SVNCommit(DirectoryPaneCommand):
 	aliases = ('Svn: Commit', 'SVN: COMMIT')
@@ -40,12 +40,12 @@ class SVNCommit(DirectoryPaneCommand):
 		scheme, path = splitscheme(url)
 
 		paths=[]
-		paths.append(as_url(path))	
+		paths.append(as_url(path))
 		if scheme != 'file://':
 			show_alert('{} is not supported'.format(url))
 			return
 
-		openCommand(" /command:commit /path:", paths, path)	
+		openCommand(" /command:commit /path:", paths, path)
 
 class SVNLog(DirectoryPaneCommand):
 	aliases = ('Svn: Log', 'SVN: LOG')
@@ -54,7 +54,7 @@ class SVNLog(DirectoryPaneCommand):
 		scheme, path = splitscheme(url)
 
 		paths=[]
-		paths.append(as_url(path))	
+		paths.append(as_url(path))
 		if scheme != 'file://':
 			show_alert('{} is not supported'.format(url))
 			return
@@ -68,7 +68,7 @@ class SVNUpdate(DirectoryPaneCommand):
 		scheme, path = splitscheme(url)
 
 		paths=[]
-		paths.append(as_url(path))	
+		paths.append(as_url(path))
 		if scheme != 'file://':
 			show_alert('{} is not supported'.format(url))
 			return
@@ -82,7 +82,7 @@ class SVNRepoBrowser(DirectoryPaneCommand):
 		scheme, path = splitscheme(url)
 
 		paths=[]
-		paths.append(as_url(path))	
+		paths.append(as_url(path))
 		if scheme != 'file://':
 			show_alert('{} is not supported'.format(url))
 			return
@@ -96,12 +96,152 @@ class SVNRepoStatus(DirectoryPaneCommand):
 		scheme, path = splitscheme(url)
 
 		paths=[]
-		paths.append(as_url(path))	
+		paths.append(as_url(path))
 		if scheme != 'file://':
 			show_alert('{} is not supported'.format(url))
 			return
 
-		openCommand(" /command:repostatus /path:", paths, path)		
+		openCommand(" /command:repostatus /path:", paths, path)
+
+class SVNRevert(DirectoryPaneCommand):
+	aliases = ('Svn: Revert', 'SVN: REVERT')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:revert /path:", paths, path)
+
+class SVNMerge(DirectoryPaneCommand):
+	aliases = ('Svn: Merge', 'SVN: MERGE')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:merge /path:", paths, path)
+
+class SVNBranch(DirectoryPaneCommand):
+        aliases = ('Svn: Branch', 'SVN: BRANCH', 'Svn:Tag', 'SVN: TAG')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:copy /path:", paths, path)
+
+class SVNDiff(DirectoryPaneCommand):
+        aliases = ('Svn: Diff', 'SVN: DIFF')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:diff /path:", paths, path)
+
+class SVNShelve(DirectoryPaneCommand):
+        aliases = ('Svn: Shelve', 'SVN: SHELVE')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:shelve /path:", paths, path)
+
+class SVNCheckpoint(DirectoryPaneCommand):
+        aliases = ('Svn: Checkpoint', 'SVN: CHECKPOINT')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:shelve /checkpoint /path:", paths, path)
+
+class SVNUnshelve(DirectoryPaneCommand):
+        aliases = ('Svn: Unshelve', 'SVN: UNSHELVE')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:unshelve /path:", paths, path)
+
+class SVNBlame(DirectoryPaneCommand):
+        aliases = ('Svn: Blame', 'SVN: BLAME')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:blame /path:", paths, path)
+
+class SVNCreatePatch(DirectoryPaneCommand):
+        aliases = ('Svn: Create patch', 'SVN: CREATE PATCH')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:createpatch /prettyprint /path:", paths, path)
+
+class SVNProperties(DirectoryPaneCommand):
+        aliases = ('Svn: Properties', 'SVN: PROPERTIES')
+	def __call__(self):
+		url = self.pane.get_path()
+		scheme, path = splitscheme(url)
+
+		paths=[]
+		paths.append(as_url(path))
+		if scheme != 'file://':
+			show_alert('{} is not supported'.format(url))
+			return
+
+		openCommand(" /command:properties /path:", paths, path)
 
 class TortoiseSVNProcSetPath(DirectoryPaneCommand):
 	def __call__(self):
@@ -159,7 +299,7 @@ def openCommand(option, files, path):
 	# TODO: Check if quoting is working for other platforms
 	args = [shlex.quote(to_path(x)) for x in files]
 	cmd= _TORTOISEPROCPATH  + " " + option + " ".join(args)
-	
+
 	env = create_clean_environment()
 	Popen(cmd, shell=False, cwd=path,
 		stdin=DEVNULL, stdout=DEVNULL, stderr=DEVNULL, env=env)
@@ -172,4 +312,4 @@ def create_clean_environment():
 		del env['LD_LIBRARY_PATH']
 	except KeyError:
 		pass
-	return env		
+	return env
