@@ -132,7 +132,7 @@ class SVNMerge(DirectoryPaneCommand):
 		openCommand(" /command:merge /path:", paths, path)
 
 class SVNBranch(DirectoryPaneCommand):
-        aliases = ('Svn: Branch', 'SVN: BRANCH', 'Svn:Tag', 'SVN: TAG')
+	aliases = ('Svn: Branch', 'SVN: BRANCH', 'Svn:Tag', 'SVN: TAG')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
@@ -146,7 +146,7 @@ class SVNBranch(DirectoryPaneCommand):
 		openCommand(" /command:copy /path:", paths, path)
 
 class SVNDiff(DirectoryPaneCommand):
-        aliases = ('Svn: Diff', 'SVN: DIFF')
+	aliases = ('Svn: Diff', 'SVN: DIFF')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
@@ -160,7 +160,7 @@ class SVNDiff(DirectoryPaneCommand):
 		openCommand(" /command:diff /path:", paths, path)
 
 class SVNShelve(DirectoryPaneCommand):
-        aliases = ('Svn: Shelve', 'SVN: SHELVE')
+	aliases = ('Svn: Shelve', 'SVN: SHELVE')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
@@ -174,7 +174,7 @@ class SVNShelve(DirectoryPaneCommand):
 		openCommand(" /command:shelve /path:", paths, path)
 
 class SVNCheckpoint(DirectoryPaneCommand):
-        aliases = ('Svn: Checkpoint', 'SVN: CHECKPOINT')
+	aliases = ('Svn: Checkpoint', 'SVN: CHECKPOINT')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
@@ -188,7 +188,7 @@ class SVNCheckpoint(DirectoryPaneCommand):
 		openCommand(" /command:shelve /checkpoint /path:", paths, path)
 
 class SVNUnshelve(DirectoryPaneCommand):
-        aliases = ('Svn: Unshelve', 'SVN: UNSHELVE')
+	aliases = ('Svn: Unshelve', 'SVN: UNSHELVE')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
@@ -202,7 +202,7 @@ class SVNUnshelve(DirectoryPaneCommand):
 		openCommand(" /command:unshelve /path:", paths, path)
 
 class SVNBlame(DirectoryPaneCommand):
-        aliases = ('Svn: Blame', 'SVN: BLAME')
+	aliases = ('Svn: Blame', 'SVN: BLAME')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
@@ -216,7 +216,7 @@ class SVNBlame(DirectoryPaneCommand):
 		openCommand(" /command:blame /path:", paths, path)
 
 class SVNCreatePatch(DirectoryPaneCommand):
-        aliases = ('Svn: Create patch', 'SVN: CREATE PATCH')
+	aliases = ('Svn: Create patch', 'SVN: CREATE PATCH')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
@@ -230,7 +230,7 @@ class SVNCreatePatch(DirectoryPaneCommand):
 		openCommand(" /command:createpatch /prettyprint /path:", paths, path)
 
 class SVNProperties(DirectoryPaneCommand):
-        aliases = ('Svn: Properties', 'SVN: PROPERTIES')
+	aliases = ('Svn: Properties', 'SVN: PROPERTIES')
 	def __call__(self):
 		url = self.pane.get_path()
 		scheme, path = splitscheme(url)
